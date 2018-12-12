@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{%  static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Tic Tac</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1 class="text-light">Welcome to Tic Tac Toe game.</h1>
+        <div>
+            <form method="POST">
+                <div class="mb-5">
+                    {% if messages %}
+                    <ul class="messages", style="list-style-type: none;">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% csrf_token %}
+                <button class="py-5" type="submit" name="v" value="0" style="width: 100px; height: 100px">{{ board.0}}</button>
+                <button type="submit" name="v" value="1" style="width: 100px; height: 100px">{{ board.1}}</button>
+                <button type="submit" name="v" value="2" style="width: 100px; height: 100px">{{ board.2}}</button><br>
+                <button type="submit" name="v" value="3" style="width: 100px; height: 100px">{{ board.3}}</button>
+                <button type="submit" name="v" value="4" style="width: 100px; height: 100px">{{ board.4}}</button>
+                <button type="submit" name="v" value="5" style="width: 100px; height: 100px">{{ board.5}}</button><br>
+                <button type="submit" name="v" value="6" style="width: 100px; height: 100px">{{ board.6}}</button>
+                <button type="submit" name="v" value="7" style="width: 100px; height: 100px">{{ board.7}}</button>
+                <button type="submit" name="v" value="8" style="width: 100px; height: 100px">{{ board.8}}</button>
+
+                <button type="submit" class="btn btn-info btn-block mt-5" name="v" value="reset">Reset</button>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
