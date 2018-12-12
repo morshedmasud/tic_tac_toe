@@ -12,14 +12,25 @@ First of all you need to clone this repository.Then be sure in your machine have
 ### Then go to 'tic_tac_toe' folder where manage.py file have. lets enter the below command step by step in your terminal
 
 ```
-    pipenv install
+pipenv install
 ```
+for active pipenv
 ```
-    python manage.py migrate
+pipenv shell
+```
+
+
+```
+python manage.py migrate
 ```
 and last command for run server
 ```
-    python manage.py runserver
+python manage.py runserver
 ```
 
-Then let's play with AI computer...
+Then go your localhost 'http://localhost:8000'
+you will see the tic_tac board
+
+let's play with AI computer
+
+
